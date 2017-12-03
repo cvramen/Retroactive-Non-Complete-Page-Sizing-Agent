@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Retroactive Non Complete Page-Sizing Agent</title>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var userwidth = $(window).width(); //variable for user's window width
+	var userheight = $(window).height(); //variable for user's window height
+
+	var wval = ((48/897) * userwidth - 1.785)/100; //equation for determining what css zoom should be
+	var hval = ((48/448) * userheight - 11.8571)/100; //equation for determining what css zoom should be
+	
+	if ((userwidth < 1900) || (userheight < 1044)) //the condition under which the resize occurs is that the user's window width is less than 1900 or height less than 1044
+	{
+		if (wval < hval) //determine whether the height or the width takes priority in terms of resizing
+		{
+			var zoomvar = wval;
+		} else 
+		{
+			var zoomvar = hval;
+		}
+		$("body").css("zoom",zoomvar); //changes the zoom property to whatever it needs to be
+	} else 
+	{
+		$("body").css("zoom","1"); //ensures that the zoom property is 1 if the user's window is tall and long enough
+	}
+});
+</script>
+</head>
+
+<body style="overflow:hidden;">
+<h2 style="font-">The appearance of this page changes</h2>
+
+<div style="width:1880px; height:944px; background:#74FF9D; margin:auto;"><p style="font-size:18pt;">This is a DIV with a width of 1900px. Its apparent width and height will change, based on the width and height of your browser window when this page loads. Notice that the ratio of height to width remains constant. If you'd like to see different sizes, adjust the size of your browser's window and refresh the page.<br /><br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non nisi turpis. Aliquam sed bibendum purus. Maecenas sit amet sem feugiat, scelerisque diam ac, vehicula ipsum. Nullam porta, nisl ut pretium sodales, massa ante dignissim erat, id dignissim dolor mauris et eros. Phasellus feugiat, quam sed maximus consequat, libero felis gravida dolor, hendrerit lacinia erat libero vel turpis. Phasellus vel nibh elementum, congue mauris rutrum, auctor augue. Pellentesque porttitor risus at mauris tincidunt varius. Duis ac odio aliquet, lobortis velit at, malesuada metus. Vestibulum id lectus vel ante luctus laoreet. Vestibulum et justo at lectus sollicitudin dignissim. Fusce nec odio ac ligula cursus auctor. In at lacinia felis, ac sodales odio. Sed auctor lacus tellus, in tincidunt urna hendrerit in. In vitae ipsum sed sapien mattis dignissim vel id augue. Suspendisse potenti. Vivamus in dui eget purus mattis interdum at sed orci. In interdum nunc ac dolor lacinia rutrum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer gravida lorem et quam scelerisque, at fringilla metus rutrum. Proin non scelerisque odio. Sed et dolor posuere, congue mi et, ultricies diam.Praesent vel elit mauris. Maecenas bibendum aliquet nibh, sed laoreet augue sollicitudin ut. Pellentesque tempus, felis lobortis lobortis tristique, odio nunc sollicitudin augue, in feugiat mi justo at ex. Vivamus gravida, diam non sollicitudin vehicula, orci mauris laoreet enim, ac consequat arcu nulla ut tortor. Integer rhoncus placerat dolor, eget fringilla augue cursus eget. Donec lacus nunc, convallis id malesuada ut, mattis sed diam. Nunc at augue at ex feugiat mollis. Quisque malesuada aliquet odio a semper. Vestibulum eu libero pulvinar, rhoncus tellus non, lacinia leo. Vivamus porta dapibus metus in vehicula. Sed est tortor, placerat eu pharetra commodo, gravida ac elit. Interdum et malesuada fames ac ante ipsum primis in non justo placerat rhoncus. Morbi quis augue ipsum. Duis arcu dui, euismod quis dolor pharetra, finibus molestie lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per in ullamcorper convallis, sodales eget erat. Maecenas non nunc gravida sem eleifend auctor. Fusce tincidunt pretium sapien vel viverra. Nulla elementum dui ex, vel sodales est ornare a. Suspendisse placerat, sapien vel ultrices mollis, purus orci faucibus est, at aliquet dui nulla vitae dolor. Nullam ac mauris orci. Nulla quis efficitur ligula. Nunc in fringilla felis. Sed at mollis turpis. Duis euismod gravida mi, vel suscipit nulla pulvinar non. Nam felis diam, venenatis vitae ante id, mattis malesuada eros. Suspendisse aliquet mauris in risus ornare, vel dignissim augue malesuada. Praesent at ex sed metus faucibus tincidunt. Duis eget consectetur augue. Suspendisse consectetur, turpis ac volutpat sagittis, tortor erat molestie felis, at efficitur neque felis nec nulla. Cras efficitur ultricies justo, id ornare risus tristique vel. Maecenas imperdiet, mi eu semper iaculis, sem justo feugiat nibh, id commodo diam velit ut dolor. Cras eget euismod dui, a sodales urna. Etiam quis magna vel massa posuere ultricies quis et mi. Aenean molestie lectus non nibh fermentum, et efficitur dui volutpat. Aliquam condimentum posuere nisi, eu congue augue sollicitudin quis. Proin vitae tristique orci, non maximus arcu. Fusce fermentum convallis suscipit. Nullam rhoncus, quam vel ultricies vulputate, tellus justo consequat ipsum, in dictum elit est nec magna. Fusce lacinia augue vel velit pellentesque, quis faucibus nisl auctor. Nulla porta scelerisque metus nec tincidunt. Donec tincidunt non nisi quis sodales. Vivamus pellentesque dignissim lacus, ac fermentum neque tincidunt eu. Morbi at risus sit amet tortor porta volutpat ut eget tellus. Phasellus pretium consectetur elit sit amet eleifend. Suspendisse a felis in nunc efficitur placerat. Ut tempor lobortis suscipit. Quisque vestibulum dignissim vulputate. Phasellus ut efficitur arcu. Phasellus euismod lobortis viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer justo sapien, viverra dignissim dui a, pellentesque tristique orci. In quam lorem, aliquam consectetur enim quis, dictum molestie nisl. Nam porttitor rutrum nisl, eget tincidunt turpis vehicula vel. Pellentesque libero lectus, gravida ac nisi sit amet, venenatis pellentesque nisi. Maecenas et nisi rhoncus, mattis libero et, auctor turpis. Nunc ullamcorper neque in fringilla maximus. Morbi porttitor porta ornare. Fusce consectetur feugiat suscipit. Curabitur tempor imperdiet nibh vel feugiat. Proin vestibulum scelerisque diam, quis aliquam lorem feugiat quis. Aliquam erat volutpat. Pellentesque faucibus tortor a est auctor, sed sodales mi laoreet. Nulla eget gravida metus, id luctus urna. Ut dapibus ipsum id urna semper, at mattis nisl dapibus. Quisque luctus suscipit nibh, ac tincidunt nunc condimentum a. Ut vel placerat eros, non dapibus nulla. Nam ac ipsum nec ipsum ornare hendrerit eget eget augue. Duis scelerisque consequat condimentum.</p></div>
+
+</body>
+</html>
